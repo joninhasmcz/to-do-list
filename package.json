@@ -1,12 +1,12 @@
 {
-  "name": "my-project",
+  "name": "todo-list",
   "version": "1.0.0",
-  "description": "Projeto Teste que servirá de template para outros projetos",
-  "main": "src/app.js",
+  "description": "To do List API with Express and MongoDB",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
-    "test": "jest",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "eslint src/**/*.js",
     "format": "prettier --write src/**/*.js",

@@ -28,44 +28,44 @@ class TaskRepository {
 
 describe('Create a Task Router', () => {
     test('Test if Task is exist', () => {
-        const task = new Task();
-        expect(task).toBeInstanceOf(Task);
+        const sut = new Task();
+        expect(sut).toBeInstanceOf(Task);
     })
     test('Test if TaskRouter is exist', () => {
-        const taskRouter = new TaskRouter();
-        expect(taskRouter).toBeInstanceOf(TaskRouter);
+        const sut = new TaskRouter();
+        expect(sut).toBeInstanceOf(TaskRouter);
     })
     test('Test if TaskController is exist', () => {
-        const taskController = new TaskController();
-        expect(taskController).toBeInstanceOf(TaskController);
+        const sut = new TaskController();
+        expect(sut).toBeInstanceOf(TaskController);
     })
     test('Test if TaskUseCase is exist', () => {
-        const taskUseCase = new TaskUseCase();
-        expect(taskUseCase).toBeInstanceOf(TaskUseCase);
+        const sut = new TaskUseCase();
+        expect(sut).toBeInstanceOf(TaskUseCase);
     })
     test('Test if TaskRepository is exist', () => {
-        const taskRepository = new TaskRepository();
-        expect(taskRepository).toBeInstanceOf(TaskRepository);
+        const sut = new TaskRepository();
+        expect(sut).toBeInstanceOf(TaskRepository);
     })
     test('Test if TaskRepository have Task', () => {
         const task = new Task();
-        const taskRepository = new TaskRepository(task);
+        const sut = new TaskRepository(task);
 
-        expect(taskRepository.task).toBeInstanceOf(Task);
+        expect(sut.task).toBeInstanceOf(Task);
     })
 
     test('Test if TaskUseCase have TaskRepository', () => {
         const taskRepository = new TaskRepository();
-        const taskUseCase = new TaskUseCase(taskRepository);
+        const sut = new TaskUseCase(taskRepository);
 
-        expect(taskUseCase.taskRepository).toBeInstanceOf(TaskRepository);
+        expect(sut.taskRepository).toBeInstanceOf(TaskRepository);
     })
 
     test('Test if TaskController have TaskUseCase', () => {
         const taskUseCase = new TaskUseCase();
-        const taskController = new TaskController(taskUseCase);
+        const sut = new TaskController(taskUseCase);
 
-        expect(taskController.taskUseCase).toBeInstanceOf(TaskUseCase);
+        expect(sut.taskUseCase).toBeInstanceOf(TaskUseCase);
     })
     test('Test if TaskRouter have TaskController', () => {
         const taskController = new TaskController();

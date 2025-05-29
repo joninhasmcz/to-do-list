@@ -4,7 +4,7 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
-const connectionMongoDB = async () => {
+const connectMongoDB = async () => {
   let uri = process.env.MONGODB_URI
 
   const runningInDocker = process.env.DOCKER === 'true'
@@ -19,11 +19,11 @@ const connectionMongoDB = async () => {
   }
   try {
     await mongoose.connect(uri)
-    logger.info('MongoDB Connected!')
+    logger.info('🟢 MongoDB Connected!')
   } catch (error) {
-    logger.error('MongoDB No Connected: ' + error.message)
+    logger.error('🔴 MongoDB No Connected: ' + error.message)
     process.exit(1)
   }
 }
 
-module.exports = connectionMongoDB
+module.exports = connectMongoDB

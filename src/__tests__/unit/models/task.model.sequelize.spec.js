@@ -1,9 +1,11 @@
 const sequelize = require('../../../config/sequelize.db.config');
 const Task = require('../../../models/sequelize/Task');
 
+
 describe('TaskModel - Sequelize', () => {
     beforeAll(async () => {
-        await sequelize.sync({ force: true });
+        await sequelize.authenticate();
+        await sequelize.sync();
     });
 
     afterAll(async () => {

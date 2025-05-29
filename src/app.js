@@ -3,7 +3,7 @@ const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
 const empregadoRoutes = require('./routes/empregado')
-const connectionMongoDB = require('./config/mongoose.db.config')
+const connectDatabase = require('./config/db.config')
 const logger = require('./utils/logger')
 
 const app = express()
@@ -13,10 +13,10 @@ app.use(cors())
 app.use(express.json())
 
 if (process.env.NODE_ENV !== 'test') {
-  connectionMongoDB()
+  connectDatabase()
 }
 
-app.use('/api/empregados', empregadoRoutes)
+// app.use('/api/empregados', empregadoRoutes)
 
 app.use((err, req, res, next) => {
   logger.error(err.stack)

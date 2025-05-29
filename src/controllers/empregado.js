@@ -1,4 +1,4 @@
-const Empregado = require('../models/Empregado')
+// const Empregado = require('../models/Empregado')
 
 exports.listarEmpregados = async (req, res) => {
   try {

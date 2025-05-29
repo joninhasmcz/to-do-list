@@ -1,6 +1,11 @@
 
 class Task {
 }
+class TaskRepository {
+    constructor(task) {
+        this.task = task;
+    }
+}
 
 class TaskRouter {
     constructor(controller) {
@@ -20,11 +25,7 @@ class TaskUseCase{
     }
 }
 
-class TaskRepository {
-    constructor(task) {
-        this.task = task;
-    }
-}
+
 
 describe('Create a Task Router', () => {
     test('Test if Task is exist', () => {

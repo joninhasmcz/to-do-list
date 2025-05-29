@@ -1,33 +1,11 @@
 const Task = require('../../../models/Task');
 const {MongoMemoryServer} = require("mongodb-memory-server");
 const mongoose = require("mongoose");
+const TaskRepository = require("../../../repositories/TaskRepository");
 
 
-class TaskRepository {
-    constructor(taskModel) {
-        this.taskModel = taskModel;
-    }
-
-    async create(data) {
-        const task = await this.taskModel.create(data);
-        return task;
-    }
-
-    async findAll() {
-        return await this.taskModel.find();
-    }
-
-    async findByName(name) {
-        return await this.taskModel.findOne({ name })
-    }
-
-    async deleteByName(name) {
-        return await this.taskModel.findOneAndDelete({ name });
-    }
-}
 
 describe('Create a Task Repository unit test', () => {
-
     let mongoServer;
     let sut;
 

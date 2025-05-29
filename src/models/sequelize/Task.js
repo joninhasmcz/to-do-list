@@ -1,5 +1,5 @@
 const { DataTypes, Model } = require('sequelize');
-const sequelize = require('../../config/sequelize.db.config');
+const {sequelize} = require('../../config/sequelize.db.config');
 
 class Task extends Model {}
 

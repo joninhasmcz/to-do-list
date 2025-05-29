@@ -1,4 +1,4 @@
-const sequelize = require('../../../config/sequelize.db.config');
+const {sequelize} = require('../../../config/sequelize.db.config');
 const Task = require('../../../models/sequelize/Task');
 
 

@@ -21,12 +21,8 @@ class TaskRepository {
         return await this.taskModel.findOne({ name })
     }
 
-    deleteByName(name) {
-        const index = this.tasks.findIndex(task => task.name === name);
-        if (index > -1) {
-            return this.tasks.splice(index, 1)[0];
-        }
-        return null;
+    async deleteByName(name) {
+        return await this.taskModel.findOneAndDelete({ name });
     }
 }
 
@@ -81,22 +77,23 @@ describe('Create a Task Repository unit test', () => {
         expect(task.status).toBe('pendente');
         expect(task.created_at).toBeInstanceOf(Date);
     })
-    test('should return undefined when task not found by name', () => {
-        const result = sut.findByName('Inexistente');
+    test('should return undefined when task not found by name', async () => {
+        const result = await sut.findByName('Inexistente');
         expect(result).toBeNull();
     });
 
-    test('should delete a task by name', () => {
-        const task = new Task('Apagar');
-        sut.create(task);
+    test('should delete a task by name', async () => {
+        const task1 = {name: 'Task 1'};
 
-        const deleted = sut.deleteByName('Apagar');
-        expect(deleted).toBe(task);
-        expect(sut.findAll()).not.toContain(task);
+        await sut.create(task1);
+
+        const deleted = await sut.deleteByName('Task 1');
+        expect(deleted.name).toBe(task1.name);
+        expect(await sut.findAll()).not.toContain(task1);
     });
 
-    test('should return null when trying to delete non-existing task', () => {
-        const deleted = sut.deleteByName('Nada');
+    test('should return null when trying to delete non-existing task', async () => {
+        const deleted = await sut.deleteByName('Nada');
         expect(deleted).toBeNull();
     });
 })

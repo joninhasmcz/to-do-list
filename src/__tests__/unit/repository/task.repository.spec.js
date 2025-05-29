@@ -1,7 +1,7 @@
-const Task = require('../../../models/Task')
+const Task = require('../../../models/mongoose/Task')
 const { MongoMemoryServer } = require('mongodb-memory-server')
 const mongoose = require('mongoose')
-const TaskRepository = require('../../../repositories/TaskRepository')
+const TaskRepository = require('../../../repositories/mongoose/TaskRepository')
 
 describe('Create a Task Repository unit test', () => {
   let mongoServer

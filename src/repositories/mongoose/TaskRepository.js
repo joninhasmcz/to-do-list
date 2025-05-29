@@ -1,4 +1,4 @@
-const ITaskRepository = require('../contracts/repositories/ITaskRepository')
+const ITaskRepository = require('../../contracts/repositories/ITaskRepository')
 
 class TaskRepository extends ITaskRepository {
   constructor (taskModel) {

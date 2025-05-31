@@ -1,4 +1,4 @@
-const CreateTaskUseCase = require('../../../../src/usescases/CreateTaskUseCase')
+const CreateTaskUseCase = require('../../../useCase/CreateTaskUseCase')
 
 describe('CreateTaskUseCase', () => {
     let sut

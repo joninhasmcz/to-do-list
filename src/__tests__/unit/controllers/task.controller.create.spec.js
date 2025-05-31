@@ -1,4 +1,6 @@
 const TaskController = require('../../../controllers/TaskController')
+const httpResponse = require('../../../utils/helpers/http-response')
+
 
 describe('Create a Task Controller', () => {
     beforeEach(() => {
@@ -29,7 +31,7 @@ describe('Create a Task Controller', () => {
         )
         expect(mockRes.status).toHaveBeenCalledWith(201)
         expect(mockRes.json).toHaveBeenCalledWith(
-            createdTask
+            httpResponse.created(createdTask)
         )
     })
     test('Should return 400 if task is not created', async () => {

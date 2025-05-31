@@ -29,7 +29,7 @@ describe('Task routes', () => {
             .send(data)
 
         expect(res.statusCode).toBe(201)
-        expect(res.body).toMatchObject({
+        expect(res.body.data).toMatchObject({
             name: 'Task 1',
             status: 'pendente',
         })
@@ -40,4 +40,5 @@ describe('Task routes', () => {
             .send({})
         expect(res.statusCode).toBe(400)
     })
+
 })

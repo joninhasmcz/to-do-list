@@ -2,8 +2,8 @@ require('dotenv').config()
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
-const empregadoRoutes = require('./routes/empregado')
 const connectDatabase = require('./config/db.config')
+const taskRoutes = require('./routes/task.routes.js')
 const logger = require('./utils/logger')
 
 const app = express()
@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'test') {
   connectDatabase()
 }
 
-// app.use('/api/empregados', empregadoRoutes)
+app.use('/api/tasks', taskRoutes)
 
 app.use((err, req, res, next) => {
   logger.error(err.stack)

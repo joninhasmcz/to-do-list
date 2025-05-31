@@ -5,8 +5,8 @@ services:
     image: postgres:alpine
     ports:
       - 5435:5432
-    container_name: mongo_postgres
+    container_name: todolist_postgres
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: 2326252
-      POSTGRES_DB: mongo-postgres-db
+      POSTGRES_DB: todolist-postgres-db

@@ -1,6 +1,6 @@
-const ITaskRepository = require("../../contracts/repositories/ITaskRepository");
+const ITaskRepository = require("../../contracts/repositories/interface.task.repository");
 
-class TaskRepository extends ITaskRepository {
+class TaskRepositorySequelize extends ITaskRepository {
     constructor(taskModel) {
         super();
         this.taskModel = taskModel;
@@ -26,4 +26,4 @@ class TaskRepository extends ITaskRepository {
     }
 }
 
-module.exports = TaskRepository;
+module.exports = TaskRepositorySequelize;

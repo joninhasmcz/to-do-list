@@ -3,7 +3,7 @@ const router = express.Router()
 
 const TaskController = require('../controllers/TaskController')
 const CreateTaskUseCase = require('../useCase/CreateTaskUseCase')
-const TaskRepository = require('../repositories/mongoose/TaskRepository')
+const TaskRepository = require('../repositories/mongoose/task.repository.mongoose')
 const Task = require('../models/mongoose/Task')
 
 const taskRepository = new TaskRepository(Task)

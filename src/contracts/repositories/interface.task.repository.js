@@ -1,4 +1,4 @@
-class ITaskRepository {
+class InterfaceTaskRepository {
   async create (data) {
     throw new Error('Method not implemented.')
   }
@@ -16,4 +16,4 @@ class ITaskRepository {
   }
 }
 
-module.exports = ITaskRepository
+module.exports = InterfaceTaskRepository

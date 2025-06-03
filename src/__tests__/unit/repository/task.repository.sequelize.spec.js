@@ -1,6 +1,6 @@
 const Task = require('../../../models/sequelize/Task')
 const {sequelize} = require("../../../config/sequelize.db.config");
-const TaskRepository = require('../../../repositories/sequelize/TaskRepository')
+const TaskRepository = require('../../../repositories/sequelize/task.repository.sequelize')
 
 describe('TaskRepository', () => {
     let sut;

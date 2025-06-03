@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const TaskController = require('../controllers/TaskController')
-const CreateTaskUseCase = require('../useCase/CreateTaskUseCase')
+const CreateTaskUseCase = require('../useCase/task.usecase.create')
 const TaskRepository = require('../repositories/mongoose/task.repository.mongoose')
 const Task = require('../models/mongoose/Task')
 

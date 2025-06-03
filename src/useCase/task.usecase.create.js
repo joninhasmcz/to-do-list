@@ -1,4 +1,4 @@
-class CreateTaskUseCase {
+class TaskUsecaseCreate {
     constructor(taskRepository) {
         this.taskRepository = taskRepository
     }
@@ -11,4 +11,4 @@ class CreateTaskUseCase {
     }
 }
 
-module.exports = CreateTaskUseCase
+module.exports = TaskUsecaseCreate
